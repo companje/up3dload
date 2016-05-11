@@ -30,7 +30,7 @@ define Package/up3dload
 	SECTION:=up3dload
 	CATEGORY:=up3dload
 	TITLE:=up3dload -- upload UMC files to UP 3D printer
-	DEPENDS:=+libusb-1.0 $(LIBC_USE_MUSL)
+	DEPENDS:=+libusb-1.0 +@LIBC_USE_MUSL
 endef
 
 define Package/up3dload/description
