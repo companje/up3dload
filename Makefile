@@ -25,7 +25,6 @@ PKG_VERSION:=0.7
 
 include $(INCLUDE_DIR)/package.mk
 
-
 define Package/up3dload
 	SECTION:=up3dload
 	CATEGORY:=up3dload
@@ -48,14 +47,17 @@ define Build/Prepare
 	$(CP) ./src/* $(PKG_BUILD_DIR)/
 endef
 
-define Build/Compile
-	@echo "======================Package Build Dir========================"
-	@echo $(PKG_BUILD_DIR)
-	$(TARGET_CONFIGURE_OPTS) \
-		CFLAGS="$(TARGET_CFLAGS) -I$(STAGING_DIR)/usr/include -I$(PKG_BUILD_DIR)" \
-		LDFLAGS="$(TARGET_LDFLAGS)" \
-	$(MAKE) -C $(PKG_BUILD_DIR) all
-endef
+# define Build/Compile
+# 	@echo "======================Package Build Dir========================"
+# 	@echo $(PKG_BUILD_DIR)
+# 	# CONFIGURE_VARS+= \
+#  #        CC="$(TOOLCHAIN_DIR)/bin/$(TARGET_CC)"
+
+# 	$(TARGET_CONFIGURE_OPTS) \
+# 		CFLAGS="$(TARGET_CFLAGS) -I$(STAGING_DIR)/usr/include -I$(PKG_BUILD_DIR)" \
+# 		LDFLAGS="$(TARGET_LDFLAGS)" \
+# 	$(MAKE) -C $(PKG_BUILD_DIR) all
+# endef
 
 define Package/up3dload/install
 	@echo "Package Build Dir"
