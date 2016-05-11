@@ -2,7 +2,8 @@ CC ?= gcc
 RM ?= rm -rf
 
 CFLAGS += -Os -std=c99 -D_BSD_SOURCE
-CFLAGS += -c -Wall $(shell pkg-config --cflags libusb-1.0)/..
+CFLAGS += -D_DEBUG_IN_OUT_
+CFLAGS += -Wall $(shell pkg-config --cflags libusb-1.0)/..
 LDFLAGS += $(shell pkg-config --libs-only-other --libs-only-L libusb-1.0)
 LIBS += $(shell pkg-config --libs-only-l libusb-1.0) -lpthread -lm
 
