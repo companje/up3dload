@@ -5,7 +5,9 @@ PKG_VERSION:=2016-05-12-i
 PKG_RELEASE=$(PKG_SOURCE_VERSION)
 
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=git@github.com:companje/UP3D.git
+# PKG_SOURCE_URL:=git@github.com:companje/UP3D.git
+PKG_SOURCE_URL:=https://github.com/companje/UP3D.git
+
 	# file://Users/rick/Documents/Doodle3D/UP3D
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE_VERSION:=master
